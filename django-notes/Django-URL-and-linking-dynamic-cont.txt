@@ -1,0 +1,11 @@
+Django URL and linking dynamic content
+
+HTML way of dynamic linking
+<a href="/project/{{project.id}}">{{project.title}}</a>
+
+Django way of dynamic linking
+<a href="{% url 'project' project.id %}">{{project.title}}</a>
+
+Syntax:
+
+href="{% url-tag 'url-name' dynamic-value %}"

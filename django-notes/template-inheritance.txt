@@ -1,0 +1,12 @@
+<!-- template inheritance -->
+<!-- {% include 'navbar.html' %} -->
+
+<!-- '{% extends 'main.html' %}' is a template tag used to create template inheritance. It allows you to define a base template (also known as a layout or master template) that can be extended or inherited by other templates -->
+<!-- the 'projects.html' is a child template -->
+
+{% extends 'main.html' %}
+
+{% block content %}
+<h1>Project Template</h1>
+
+{% endblock content %}

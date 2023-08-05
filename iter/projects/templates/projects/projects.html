@@ -1,0 +1,34 @@
+<!-- template inheritance -->
+{# {% include 'navbar.html' %} #}
+
+{# '{% extends 'main.html' %}' is a template tag used to create template inheritance. It allows you to define a base template (also known as a layout or master template) that can be extended or inherited by other templates #}
+<!-- the 'projects.html' is a child template -->
+{% extends 'main.html' %}
+
+
+{% block content %}
+
+{# sample of rendering through expression '{{ }}' #}  
+<p>You are on the {{page}} page</p>
+
+{# sample of rendering through statement '{% %}' #}
+{% if number > 10 %}
+    <p>Number is greater than 10</p>
+
+{% else %}
+    <p>Number is less than or equal to 10</p>
+{% endif %}
+
+<hr>
+
+<h1>Projects</h1>
+
+<ul>
+    {% for project in projects %}
+        <!-- render output in a dictionary using dot notation -->
+        <li>Title: <a href="{% url 'project' project.id %}">{{project.title}}</a> --- {{project.description}}</li>
+
+    {% endfor %}
+</ul>
+
+{% endblock content %}
