@@ -1,0 +1,40 @@
+Database Queries
+
+Syntax:
+
+variable = ModelName.ModelObjectAttribute.method()
+
+queryset = ModelName.objects.all()
+			    .get()
+			    .filter()
+			    .exclude()
+
+#Be sure to import a model first before making queries
+from .models import ModelName
+
+#all() -> retrieves all objects from table
+queryset = ModelName.objects.all()
+
+#get(attribute='value') -> retrieve a single object based on matched attribute
+queryItem = ModelName.objects.get(attribute='value')
+
+#filter(attribute='value') -> returns all items from table that match a particular attribute value
+queryset = ModelName.objects.filter(attribute='value')
+			    .filter(attribute__startswith='value')
+			    .filter(attribute__contains='value')
+			    .filter(attribute__icontains='value')
+			    .filter(attribute__gt='value')
+			    .filter(attribute__gte='value')
+			    .filter(attribute__lt='value')
+			    .filter(attribute__lte='value')
+
+#exclude(attribute='value') -> excludes any object matching a particular filter
+queryset = ModelName.object.exclude(attribute='value')
+
+#Query Models Children
+item = ModelName.object.first()
+item.childmodel_set.all()
+
+#Query ManyToMany Fields
+item = ModelName.object.first()
+item.relationshipname.all()

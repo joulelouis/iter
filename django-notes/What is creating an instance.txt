@@ -1,0 +1,33 @@
+What is creating instance?
+
+In programming, creating an instance refers to the process of creating an object base on a class. An instance, also known as an object, is a concrete representation of a class, and it can have its own unique data and state while inheriting behavior and attributes from the class
+
+1. Class
+- a class is a blueprint or template that defines the structure and behavior of objects. It specifies the attributes(data) and methods(functions) that objects of that class will have.
+
+2. Instance
+- an instance is an individual object created based on a class. It has its own memory space and can hold its own data. However, it inherits the attributes and methods defined in the class.
+
+3. Constructor
+- in many object-oriented-programming languages like Python, when you create an instance of a class, a special method called a constructor is called. The constructor typically initializes the instance's attributes and performs any necessary setup.
+
+Here's an example in Python
+# create a Dog class
+class Dog:
+    # create attributes using the '__init__' method constructor
+    def __init__(self, name, age):
+        self.name = name
+	self.age = age
+
+    # create method
+    def bark(self):
+	print(f"{self.name} barks!")
+
+# Creating instances of the Dog class
+dog1 = Dog("Brownie", 3)
+dog2 = Dog("Max", 5)
+
+# Accessing instance attributes and methods
+print(dog1.name)	# Output: Buddy
+print(dog2.age)		# Output: 5		
+dog1.bark()		# Output: Buddy barks!

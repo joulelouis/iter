@@ -1,0 +1,15 @@
+What are migrations in Python Django?
+
+Migrations are a mechanism for managing changes to your database schema over time. They allow you to evolve the structure of your database as your Django evolves, without the need to manually create, alter, or delete database tables and fields.
+
+Here's a step-by-step explanation of how migrations work in Django
+
+1. Model Definition
+2. Initial Migration
+3. Database Schema Changes
+4. Subsequent Migrations
+5. Applying Subsequent Migrations
+6. Rollbacks and Reversing Migrations
+7. Database Schema Version Control
+
+In summary, migrations in Django provide a structured way to manage changes to your databaseschema as your project evolves. They automate the process of creating and modifying database table and fields, making it easier to maintain and update your application's data model.

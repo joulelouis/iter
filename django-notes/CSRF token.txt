@@ -1,0 +1,10 @@
+What is CSRF Token?
+
+CSRF Token (Cross-Site Request Forgery Token) is a security vulnerability where an attacker tricks a user into performing an action on a website without their knowledge or consent. To prevent CSRF attacks, web apps use CSRF tokens
+
+How it works
+When a form is submitted, the web browser includes all form field values in the request. The CSRF token is also included in the form data. On the server side, Django compares the received CSRF token with the expected token stored on the server. If they match, the request is considered valud; otherwise, it's rejected.
+
+Protection
+The CSRF token protects your app by ensuring that the form submission is originating from your own website and not from an external source trying to forge a request on behalf of an authenticated user.
+
