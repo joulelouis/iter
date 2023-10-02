@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure--l56_zqmrt)w(4vnf5k2ls47@1zo##+&r8d)*kvz2gs4%t!!p-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+
+    # manage static files (images, CSS, JavaScript)
     'django.contrib.staticfiles',
 
     #everytime you startapp/ created an app, define/register it here
@@ -47,6 +49,9 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+
+    # WhiteNoise middleware
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -125,6 +130,20 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+
+MEDIA_URL = '/images/'
+
+# this will connect the static files to our web apps
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static') # in the BASE_DIR (iter), look for the 'static' folder
+]
+
+# MEDIA_ROOT simply tells Django where to upload user generated content. Any time we submit that image field, everything's going to go into static/images
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+
+# STATIC_ROOT is kind of like MEDIA_ROOT where MEDIA_ROOT defines where user uploaded content is going. STATIC_ROOT is basically going to define where our static files in production are going.
+# python manage.py collectstatic is the command to create the 'staticfiles' folder and copy all the static files in the MEDIA_ROOT. When the files has been modified in development, we can run the collectstatic command to update the staticfiles
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

@@ -1,0 +1,7 @@
+What is enctype?
+
+In HTML forms, the 'enctype' attribute stands for 'encoding type', and it specifies how the form data should be encoded before it is sent to the server when the form is submitted. The 'enctype' attribute is particularly important when a form includes the file uploads
+
+enctype="multipart/form-data"
+
+This value of 'enctype' attribute indicates that the form data should be encoded as "multipart/form-data". This encoding type is used when you want to include binary data, such as file uploads in the form data.

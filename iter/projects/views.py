@@ -34,7 +34,8 @@ def createProject(request):
     if request.method == 'POST':
         # create a new instance of the ProjectForm
         # 'request.POST' is an attribute of the request object that contains a dictionary of data submitted via POST. Each form field's  name is a key, and the user's input is the corresponding value
-        form = ProjectForm(request.POST)
+        # 'request.FILES' attribute contains data form file input fields. It provides access to uploaded files as a dictionary. Each file input field's name in the HTML form becomes a key in the 'request.FILES' dictionary, and the corresponding value is a 'UploadedFile' object or a list of 'Uploaded file' objects if multiple files were selected for that field
+        form = ProjectForm(request.POST, request.FILES)
         # is_valid() check if the form created by the user matched the requirements of the field parameters
         if form.is_valid():
             # .save() will save the created form by the user
@@ -56,7 +57,7 @@ def updateProject(request, pk):
     # Check if the HTTP request method is 'POST'
     if request.method == 'POST':
         # Initialize a new ProjectForm instance with data from the submitted POST request and the project instance
-        form = ProjectForm(request.POST, instance=project)
+        form = ProjectForm(request.POST, request.FILES, instance=project)
         # Check if the form is valid (passes validation checks)
         if form.is_valid():
             # Save the form data to update the project instance in the database

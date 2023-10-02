@@ -6,4 +6,4 @@ class ProjectForm(ModelForm):
     class Meta:
         model = Project
         #for the fields object, you can store a list ['field1', 'field2'] for the field in the model or if you want all the fields, use '__all__'
-        fields = ['title', 'description', 'demo_link', 'source_link', 'tags']
+        fields = ['title', 'featured_image', 'description', 'demo_link', 'source_link', 'tags']

@@ -1,14 +1,16 @@
 <!-- 'main.html' is the base template -->
 <!-- will be used in different pages -->
 <!DOCTYPE html>
+<!-- is a template tag used to load the static files and assets that are associated with your Django Project -->
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'styles/main.css' %}">
     <title>Iter</title>
 </head>
 <body>
-    <h1>This is the main template</h1>
     {% include 'navbar.html' %}
 
     {% block content %}

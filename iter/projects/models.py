@@ -13,6 +13,7 @@ class Project(models.Model):
     # null=True means that this section is not required. If null is not set, by default it is 'False'
     # blank=True is for the Django to know that we are allowing to submit a form with the value being empty
     description = models.TextField(null=True, blank=True)
+    featured_image  = models.ImageField(null=True, blank=True, default="default.jpg")
     demo_link = models.CharField(max_length=2000, null=True, blank=True)
     source_link = models.CharField(max_length=2000, null=True, blank=True)
     # Tag model and Project model has ManyToMany relationship so ManyToManyField(modelName) is used

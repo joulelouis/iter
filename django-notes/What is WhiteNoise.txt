@@ -1,0 +1,9 @@
+What is WhiteNoise?
+
+whitenoiseis a radically simplified static file serving for Python web apps
+
+WhiteNoise allows your web app to serve its own static files,making it a self-contained unit that can be deployed anywhere without relying on nginx, Amazon S3, or any other external services (Especially useful on Heroku, OpenShift, and other PaaS providers.) 
+
+Installation
+
+python -m pip install whitenoise

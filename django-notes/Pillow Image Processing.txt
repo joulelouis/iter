@@ -1,0 +1,16 @@
+in Python, Pillow is a popular and powerful library for image processing tasks. It is often used in web development, including Django, to work with images and manipulate them. Pillow provides a wide range of functions and methods for tasks such as opening, manipulating, and saving various image file formats.
+
+In the context of Django, Pillow is commonly used for tasks like:
+
+1. Uploading and handling user-provided images: 
+- when users upload images through a Django web application, you can use Pillow to resize, crop, or otherwise manipulate these images to fit your application's requirements.
+
+2. Generating thumbnails:
+- you can create thumbnail images of larger images, which can be useful for displaying previews or smaller versions of images on your website.
+
+etc...
+
+
+to use the Pillow in a Django project, install the package manager
+
+python -m pip install pillow

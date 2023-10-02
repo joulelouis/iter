@@ -20,6 +20,10 @@ from django.contrib import admin
 # imports the 'path' function from the 'django.urls' modules. The 'path' function is a simple way to define URL patterns in Django
 # import the 'include' function to connect the sub
 from django.urls import path, include
+# import the settings.py file to connect our MEDIA_ROOT and MEDIA_URL
+from django.conf import settings
+# import static is basically going to help us create a URL for our static files
+from django.conf.urls.static import static
 
 
 # 'urlpatterns' is in charge of the URL routing system of the entire app. Each element in the list represents a URL pattern that will be mapped to a specific view
@@ -29,3 +33,11 @@ urlpatterns = [
     # this is basically telling the program to "go to the directory/folder then go to the file"
     path('', include('projects.urls'))
 ]
+
+# add a URL pattern to serve media files. This will serve the files uploaded by a user during development
+# When a request is made to a URL that starts with the 'MEDIA_URL', Django will look for the requested file within the directory specified by 'MEDIA_ROOT'
+# If the requested file exists in 'MEDIA_ROOT', Django will serve it as a response to the user's request
+# This line of code allows you to serve user-uploaded media files during development, making them accessible through your web app
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# Serving static files during development
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

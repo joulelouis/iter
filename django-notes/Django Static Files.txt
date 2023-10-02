@@ -1,0 +1,15 @@
+{% load static %} is a template tag in Django template used to laod the static files and assets that are associated with your Django project. Static files typically include things like stylesheets(CSS), JavaScript files, iamges, fonts, and other resources that are used to render the web pages and enhance the user interface of your website or web app.
+
+Here's what '{% load static %}' does and why it's necessary:
+
+1. Loading Static Files
+- when you include '{% load static %}' in a Django template, you're telling Django to make use of the static files that you've defined in your project.
+
+2. Static Files Configuration:
+- to use '{% load static %}', you need to configure your Django Project to handle static files correctly. This typically involves specifying a directory where your static files are located and setting up a URL pattern for serving those files in your project's settings.
+
+3. Usage
+- once you've loaded the static files, you can use the '{% static %}' template to generate URLs for your static assets
+
+4. Benefits
+- using '{% load static %}' and '{% static %}' ensures that your static files are included correctly and that their URLs are generated consistently. It also helps with managing versioning, caching, and serving static files efficiently in a production environment.
